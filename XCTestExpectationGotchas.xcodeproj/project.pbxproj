@@ -10,6 +10,7 @@
 		3F6D3B5F1C9E376600024195 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B5E1C9E376600024195 /* main.swift */; };
 		3F6D3B6C1C9E37B200024195 /* LateCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B6B1C9E37B200024195 /* LateCallback.swift */; };
 		3F6D3B721C9E410400024195 /* DoubleCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B711C9E410400024195 /* DoubleCallback.swift */; };
+		3F6D3B771C9E534500024195 /* Deferred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6D3B741C9E52ED00024195 /* Deferred.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		3F6D3B6B1C9E37B200024195 /* LateCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LateCallback.swift; sourceTree = "<group>"; };
 		3F6D3B6D1C9E37B200024195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6D3B711C9E410400024195 /* DoubleCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleCallback.swift; sourceTree = "<group>"; };
+		3F6D3B741C9E52ED00024195 /* Deferred.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Deferred.framework; path = Carthage/Build/Mac/Deferred.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D3B771C9E534500024195 /* Deferred.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +57,7 @@
 		3F6D3B521C9E376600024195 = {
 			isa = PBXGroup;
 			children = (
+				3F6D3B741C9E52ED00024195 /* Deferred.framework */,
 				3F6D3B5D1C9E376600024195 /* XCTestExpectationGotchas */,
 				3F6D3B6A1C9E37B200024195 /* Tests */,
 				3F6D3B5C1C9E376600024195 /* Products */,
@@ -274,6 +278,10 @@
 		3F6D3B631C9E376600024195 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -281,6 +289,10 @@
 		3F6D3B641C9E376600024195 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -289,6 +301,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremywsherman.Tests;
@@ -300,6 +316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jeremywsherman.Tests;

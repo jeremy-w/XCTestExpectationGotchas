@@ -1,0 +1,13 @@
+# Carthage checkouts and builds
+Carthage/
+
+# Xcode per-user config
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+xcuserdata/
+project.xcworkspace
+
