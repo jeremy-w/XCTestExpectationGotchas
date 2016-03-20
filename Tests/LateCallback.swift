@@ -15,6 +15,14 @@ class LateCallback: XCTestCase {
             print("Aww, we timed out: \(error)")
         }
     }
+
+
+    func testZzz() {
+        print("Let's just wait a while…")
+        let tillAfterCallBack = callBackDelay
+        spin(forSeconds: tillAfterCallBack)
+        print("Yawn, that was boring.")
+    }
 }
 
 
@@ -29,4 +37,11 @@ func after(seconds seconds: NSTimeInterval, call closure: () -> Void) {
         closure()
         print("\(seconds): all done here")
     }
+}
+
+
+
+func spin(forSeconds seconds: NSTimeInterval) {
+    let afterCallBack = NSDate(timeIntervalSinceNow: seconds)
+    NSRunLoop.mainRunLoop().runUntilDate(afterCallBack)
 }
