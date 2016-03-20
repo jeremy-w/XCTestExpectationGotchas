@@ -49,7 +49,7 @@ func after(seconds seconds: NSTimeInterval, call closure: () -> Void) {
     let delay = dispatch_time(
         DISPATCH_TIME_NOW,
         Int64(seconds) * numericCast(NSEC_PER_SEC))
-    let ontoQueue = dispatch_get_main_queue()
+    let ontoQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     dispatch_after(delay, ontoQueue) {
         print("\(seconds): finished waiting")
         closure()
