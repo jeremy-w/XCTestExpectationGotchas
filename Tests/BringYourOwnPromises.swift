@@ -15,6 +15,19 @@ class BringYourOwnPromises: XCTestCase {
 
         print("we got a pony! \(pony)")
     }
+
+
+    func testWhenImpatientNoPonyForYou() {
+        let anyDelay: NSTimeInterval = 1
+        let futurePony = giveMeAPony(after: anyDelay)
+
+        guard let pony = futurePony.wait(.Now) else {
+            print("no patience, no pony")
+            return
+        }
+
+        XCTFail("we got a pony???! \(pony)")
+    }
 }
 
 
