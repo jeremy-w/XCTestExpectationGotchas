@@ -4,11 +4,29 @@ class LateCallback: XCTestCase {
     let callBackDelay: NSTimeInterval = 2
 
 
-    func testNotWaitingLongEnough() {
+    func xtestNotWaitingLongEnough() {
         let promiseToCallBack = expectationWithDescription("calls back")
         after(seconds: callBackDelay) { () -> Void in
             print("I knew you'd call!")
             promiseToCallBack.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(callBackDelay / 2) { error in
+            print("Aww, we timed out: \(error)")
+        }
+    }
+
+
+    func testPreparedForNotWaitingLongEnough() {
+        weak var promiseToCallBack = expectationWithDescription("calls back")
+        after(seconds: callBackDelay) { () -> Void in
+            guard let promise = promiseToCallBack else {
+                print("too late, buckaroo")
+                return
+            }
+
+            print("I knew you'd call!")
+            promise.fulfill()
         }
 
         waitForExpectationsWithTimeout(callBackDelay / 2) { error in
