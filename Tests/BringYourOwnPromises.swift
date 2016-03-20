@@ -3,8 +3,10 @@ import Deferred
 
 
 class BringYourOwnPromises: XCTestCase {
+    let anyDelay: NSTimeInterval = 1
+
+
     func testGettingAPony() {
-        let anyDelay: NSTimeInterval = 1
         let futurePony = giveMeAPony(after: anyDelay)
 
         let longEnough = anyDelay + 1
@@ -18,7 +20,6 @@ class BringYourOwnPromises: XCTestCase {
 
 
     func testWhenImpatientNoPonyForYou() {
-        let anyDelay: NSTimeInterval = 1
         let futurePony = giveMeAPony(after: anyDelay)
 
         guard let pony = futurePony.wait(.Now) else {
@@ -27,6 +28,11 @@ class BringYourOwnPromises: XCTestCase {
         }
 
         XCTFail("we got a pony???! \(pony)")
+    }
+
+
+    func testZzzDoesNotCrash() {
+        spin(forSeconds: 2 * anyDelay)
     }
 }
 
