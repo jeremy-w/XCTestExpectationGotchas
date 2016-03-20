@@ -10,7 +10,9 @@
 		3F6D3B5F1C9E376600024195 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B5E1C9E376600024195 /* main.swift */; };
 		3F6D3B6C1C9E37B200024195 /* LateCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B6B1C9E37B200024195 /* LateCallback.swift */; };
 		3F6D3B721C9E410400024195 /* DoubleCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B711C9E410400024195 /* DoubleCallback.swift */; };
-		3F6D3B771C9E534500024195 /* Deferred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6D3B741C9E52ED00024195 /* Deferred.framework */; };
+		3F6D3B791C9E539000024195 /* BringYourOwnPromises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6D3B781C9E539000024195 /* BringYourOwnPromises.swift */; };
+		3F6D3B7A1C9E556500024195 /* Deferred.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6D3B741C9E52ED00024195 /* Deferred.framework */; };
+		3F6D3B7C1C9E559D00024195 /* Deferred.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6D3B741C9E52ED00024195 /* Deferred.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +25,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		3F6D3B7B1C9E558800024195 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F6D3B7C1C9E559D00024195 /* Deferred.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +46,7 @@
 		3F6D3B6D1C9E37B200024195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6D3B711C9E410400024195 /* DoubleCallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleCallback.swift; sourceTree = "<group>"; };
 		3F6D3B741C9E52ED00024195 /* Deferred.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Deferred.framework; path = Carthage/Build/Mac/Deferred.framework; sourceTree = "<group>"; };
+		3F6D3B781C9E539000024195 /* BringYourOwnPromises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BringYourOwnPromises.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F6D3B771C9E534500024195 /* Deferred.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D3B7A1C9E556500024195 /* Deferred.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +100,7 @@
 			children = (
 				3F6D3B6B1C9E37B200024195 /* LateCallback.swift */,
 				3F6D3B711C9E410400024195 /* DoubleCallback.swift */,
+				3F6D3B781C9E539000024195 /* BringYourOwnPromises.swift */,
 				3F6D3B6D1C9E37B200024195 /* Info.plist */,
 			);
 			path = Tests;
@@ -118,6 +133,7 @@
 				3F6D3B651C9E37B200024195 /* Sources */,
 				3F6D3B661C9E37B200024195 /* Frameworks */,
 				3F6D3B671C9E37B200024195 /* Resources */,
+				3F6D3B7B1C9E558800024195 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6D3B791C9E539000024195 /* BringYourOwnPromises.swift in Sources */,
 				3F6D3B6C1C9E37B200024195 /* LateCallback.swift in Sources */,
 				3F6D3B721C9E410400024195 /* DoubleCallback.swift in Sources */,
 			);
